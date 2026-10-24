@@ -9,14 +9,14 @@
 בתוך Claude Code (לא בטרמינל):
 
 ```
-/plugin marketplace add dangogit/ncode-skills
+/plugin marketplace add nCode-co-il/ncode-skills
 /plugin install ncode@ncode-skills
 ```
 
 או מהטרמינל, לסקיל אחד:
 
 ```bash
-npx skills add dangogit/ncode-skills --skill client-project-proposal
+npx skills add nCode-co-il/ncode-skills --skill client-project-proposal
 ```
 
 לא צריך חשבון מיוחד או הזמנה. הריפו ציבורי, וכל אחד יכול להתקין ממנו.
@@ -77,7 +77,7 @@ npx skills add dangogit/ncode-skills --skill client-project-proposal
 
 ## משהו לא עובד?
 
-פתחו [issue](https://github.com/dangogit/ncode-skills/issues) עם מה ביקשתם מ-Claude ומה יצא. באג בסקיל מתוקן כאן, וכולם מקבלים את התיקון בעדכון הבא.
+פתחו [issue](https://github.com/nCode-co-il/ncode-skills/issues) עם מה ביקשתם מ-Claude ומה יצא. באג בסקיל מתוקן כאן, וכולם מקבלים את התיקון בעדכון הבא.
 
 ## רישיון
 
