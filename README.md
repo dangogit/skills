@@ -17,7 +17,7 @@
 npx skills add dangogit/skills --skill client-project-proposal
 ```
 
-הריפו פרטי בינתיים. אם קיבלת הזמנה ל-GitHub, תאשר אותה קודם, אחרת ההתקנה לא תמצא אותו.
+לא צריך חשבון מיוחד או הזמנה. הריפו ציבורי, וכל אחד יכול להתקין ממנו.
 
 ## מה יש כאן
 
@@ -72,5 +72,9 @@ npx skills add dangogit/skills --skill client-project-proposal
 ```
 
 או `npx skills update` אם התקנת דרך `npx`.
+
+## משהו לא עובד?
+
+תפתח [issue](https://github.com/dangogit/skills/issues) עם מה ביקשת מ-Claude ומה יצא. אם זה באג בסקיל, אני מתקן אותו כאן וכולם מקבלים את התיקון בעדכון הבא.
 
 דניאל
