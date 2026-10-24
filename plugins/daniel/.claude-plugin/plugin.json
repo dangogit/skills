@@ -7,5 +7,12 @@
     "url": "https://danielthegoldman.com"
   },
   "homepage": "https://github.com/dangogit/skills",
-  "keywords": ["proposal", "quote", "hebrew", "clients", "freelance"]
+  "keywords": [
+    "proposal",
+    "quote",
+    "hebrew",
+    "clients",
+    "freelance"
+  ],
+  "license": "MIT"
 }

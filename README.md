@@ -77,4 +77,8 @@ npx skills add dangogit/skills --skill client-project-proposal
 
 תפתח [issue](https://github.com/dangogit/skills/issues) עם מה ביקשת מ-Claude ומה יצא. אם זה באג בסקיל, אני מתקן אותו כאן וכולם מקבלים את התיקון בעדכון הבא.
 
+## רישיון
+
+MIT. מותר להשתמש, לשנות ולשלב בפרויקטים שלך, גם מסחריים. רק תשאיר את קובץ ה-[LICENSE](LICENSE).
+
 דניאל
