@@ -1,0 +1,12 @@
+{
+  "name": "ncode",
+  "description": "The skills nCode (אין קוד) teaches in its courses, for building client projects with Claude Code: discovery, workday estimates and a branded Hebrew RTL proposal PDF.",
+  "version": "0.2.0",
+  "author": {
+    "name": "nCode (אין קוד)",
+    "url": "https://ncode.co.il"
+  },
+  "homepage": "https://github.com/dangogit/ncode-skills",
+  "keywords": ["ncode", "proposal", "quote", "hebrew", "clients", "freelance"],
+  "license": "MIT"
+}
