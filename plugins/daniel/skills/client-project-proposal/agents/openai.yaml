@@ -1,0 +1,4 @@
+interface:
+  display_name: "הצעת מחיר לפרויקט לקוח"
+  short_description: "מחומרי לקוח להיקף עבודה ולמסמך הצעת מחיר ברור"
+  default_prompt: "השתמש ב־$client-project-proposal כדי לאסוף את חומרי הלקוח ולהפיק הצעת מחיר מסודרת."

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>[שם המערכת] - [שם הלקוח]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=block" rel="stylesheet">
+<style>
+:root {
+  --accent: #4f46e5;
+  --accent-dark: #4338ca;
+  --accent-soft: #eef0fe;
+  --accent-line: #c7c9f9;
+  --ink: #0a0a0a;
+  --ink-2: #3f3f46;
+  --muted: #6b7280;
+  --surface: #f6f6f8;
+  --border: #e4e4e7;
+}
+@page { size: A4; margin: 14mm 15mm 16mm 15mm; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  direction: rtl; text-align: right; margin: 0; background: #fff; color: var(--ink);
+  font-family: "Heebo", "Noto Sans Hebrew", "Arial Hebrew", Arial, sans-serif;
+  font-size: 10pt; line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+.num { unicode-bidi: isolate; direction: ltr; display: inline-block; }
+.en { unicode-bidi: isolate; white-space: nowrap; }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 5mm; border-bottom: 1.5px solid var(--ink); }
+.top img { height: 13mm; width: auto; }
+.top .meta { text-align: left; font-size: 8.5pt; color: var(--ink-2); line-height: 1.6; }
+.top .meta b { color: var(--ink); font-weight: 700; }
+
+.hero { margin: 6mm 0 4mm; }
+.kicker { display: inline-block; font-size: 8.5pt; font-weight: 700; letter-spacing: 0.04em; color: var(--accent); background: var(--accent-soft); padding: 1mm 3mm; border-radius: 99px; margin-bottom: 3mm; }
+h1 { font-size: 22pt; font-weight: 800; line-height: 1.15; margin: 0 0 2.5mm; letter-spacing: -0.01em; }
+.lede { font-size: 11pt; color: var(--ink-2); margin: 0; max-width: 165mm; }
+
+.parties { display: flex; gap: 6mm; margin: 6mm 0 0; }
+.parties > div { flex: 1; border-top: 1px solid var(--border); padding-top: 2mm; }
+.parties .label { font-size: 8pt; color: var(--muted); font-weight: 500; margin-bottom: 0.5mm; }
+.parties .name { font-weight: 700; font-size: 10.5pt; }
+.parties .line { font-size: 9pt; color: var(--ink-2); }
+
+.stats { display: flex; gap: 4mm; margin: 5mm 0 0; }
+.stat { flex: 1; background: var(--surface); border-radius: 3mm; padding: 4mm 5mm; border-top: 3px solid var(--accent); }
+.stat .v { font-size: 19pt; font-weight: 800; line-height: 1.1; }
+.stat .v small { font-size: 10pt; font-weight: 500; color: var(--ink-2); }
+.stat .k { font-size: 8.5pt; color: var(--muted); margin-top: 1mm; }
+
+/* Sections */
+h2 { font-size: 14pt; font-weight: 800; margin: 7mm 0 2.5mm; display: flex; align-items: center; gap: 2.5mm; page-break-after: avoid; break-after: avoid; }
+h2::before { content: ""; width: 1.6mm; height: 5.5mm; background: var(--accent); border-radius: 1mm; flex: none; }
+h3 { font-size: 10.5pt; font-weight: 700; margin: 4mm 0 1.5mm; page-break-after: avoid; break-after: avoid; }
+p { margin: 0 0 2.5mm; }
+ul { margin: 0 0 2.5mm; padding-inline-start: 5mm; }
+li { margin-bottom: 1.2mm; }
+li::marker { color: var(--accent); }
+.muted { color: var(--muted); }
+.small { font-size: 8.8pt; }
+.keep { break-inside: avoid; page-break-inside: avoid; }
+.page-break { break-before: page; page-break-before: always; }
+
+.two { display: flex; gap: 6mm; }
+.two > div { flex: 1; }
+.card { background: var(--surface); border-radius: 3mm; padding: 4mm 5mm; }
+.card h3 { margin-top: 0; }
+.card ul { margin-bottom: 0; }
+.card.accent { background: var(--accent-soft); }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; margin: 2mm 0 3mm; font-size: 9.3pt; }
+tr { break-inside: avoid; page-break-inside: avoid; }
+th { background: var(--ink); color: #fff; font-weight: 700; text-align: right; padding: 2mm 3mm; font-size: 8.8pt; }
+td { padding: 2.4mm 3mm; border-bottom: 1px solid var(--border); vertical-align: top; text-align: right; }
+td.n, th.n { text-align: left; white-space: nowrap; }
+td.c, th.c { text-align: center; white-space: nowrap; }
+.stage-no { display: inline-flex; align-items: center; justify-content: center; width: 6mm; height: 6mm; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 8.5pt; margin-left: 2mm; vertical-align: middle; }
+.stage-name { font-weight: 700; }
+.done-when { display: block; color: var(--ink-2); font-size: 8.8pt; margin-top: 0.8mm; }
+tr.total td { font-weight: 800; font-size: 11pt; border-bottom: none; background: var(--accent-soft); }
+tr.sub td { color: var(--ink-2); }
+
+/* Stage blocks */
+.stage { display: flex; gap: 4mm; padding: 3.5mm 0; border-bottom: 1px solid var(--border); break-inside: avoid; page-break-inside: avoid; }
+.stage:last-child { border-bottom: none; }
+.stage .badge { flex: none; width: 9mm; height: 9mm; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 800; font-size: 11pt; display: flex; align-items: center; justify-content: center; }
+.stage .body { flex: 1; }
+.stage .title { font-weight: 800; font-size: 11pt; margin-bottom: 1mm; }
+.stage .title .when { font-weight: 500; font-size: 9pt; color: var(--muted); margin-right: 2mm; }
+.stage ul { margin: 0 0 1.5mm; }
+.stage .accept { font-size: 9pt; background: var(--accent-soft); border-radius: 2mm; padding: 1.5mm 3mm; display: inline-block; }
+.stage .accept b { color: var(--accent-dark); }
+
+/* Gantt */
+.gantt { margin: 3mm 0 2mm; break-inside: avoid; page-break-inside: avoid; }
+.g-row { display: flex; align-items: center; height: 8.5mm; }
+.g-label { width: 52mm; flex: none; font-size: 9pt; font-weight: 500; padding-left: 3mm; }
+.g-track { flex: 1; display: grid; grid-template-columns: repeat(10, 1fr); height: 100%; position: relative; }
+.g-track > i { border-right: 1px dashed var(--border); }
+.g-track > i:first-child { border-right: none; }
+.g-bar { position: absolute; top: 1.6mm; bottom: 1.6mm; background: var(--accent); border-radius: 1.5mm; color: #fff; font-size: 7.8pt; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.g-bar.light { background: var(--accent-line); color: var(--ink); }
+.g-head .g-track { font-size: 8pt; color: var(--muted); }
+.g-head .g-track > span { text-align: center; align-self: center; }
+
+.price { display: flex; align-items: center; justify-content: space-between; background: var(--ink); color: #fff; border-radius: 3mm; padding: 6mm 7mm; margin: 2mm 0 4mm; }
+.price .k { font-size: 9pt; color: #c7c9f9; margin-bottom: 1mm; }
+.price .v { font-size: 26pt; font-weight: 800; line-height: 1.1; }
+.price .v small { font-size: 11pt; font-weight: 500; color: #e4e4e7; }
+.price .vat { text-align: left; font-size: 9.5pt; line-height: 1.8; color: #e4e4e7; }
+.price .vat b { color: #fff; }
+.callout { border-right: 3px solid var(--accent); background: var(--surface); padding: 3mm 4mm; border-radius: 2mm 0 0 2mm; margin: 3mm 0; }
+
+.sign { display: flex; gap: 12mm; margin-top: 10mm; break-inside: avoid; page-break-inside: avoid; }
+.sign > div { flex: 1; }
+.sign .line { border-top: 1px solid var(--ink); margin-top: 13mm; padding-top: 1.5mm; font-size: 9pt; }
+footer { margin-top: 8mm; padding-top: 2.5mm; border-top: 1px solid var(--border); font-size: 8pt; color: var(--muted); display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+<!-- Branded Hebrew proposal template. Replace every [bracket]. Rules: references/defaults.md.
+     Render: scripts/render_branded_pdf.py. Delete sections that do not apply. -->
+
+<div class="top">
+  <img src="data:image/png;base64,{{LOGO}}" alt="[השם שלך]">
+  <div class="meta">
+    <div><b>תאריך</b> <span class="num">[DD.MM.YYYY]</span></div>
+    <div><b>בתוקף עד</b> <span class="num">[DD.MM.YYYY]</span></div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="kicker">תוכנית פיתוח והצעת מחיר</div>
+  <h1>[שם המערכת, עד שורה אחת]</h1>
+  <p class="lede">[משפט או שניים: מה הלקוח מקבל]</p>
+  <div class="parties">
+    <div>
+      <div class="label">מאת</div>
+      <div class="name">[השם שלך]</div>
+      <div class="line">[שם העסק, עוסק מורשה או ח"פ]</div>
+      <div class="line"><span class="num">[המייל שלך]</span></div>
+    </div>
+    <div>
+      <div class="label">לכבוד</div>
+      <div class="name">[שם הלקוח]</div>
+      <div class="line">[מחלקה או איש קשר]</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="v"><span class="num">[N]</span> <small>שלבים</small></div><div class="k">כל שלב נגמר במשהו שעובד</div></div>
+  <div class="stat"><div class="v"><span class="num">[N]</span> <small>שבועות</small></div><div class="k">מהיום שכל הגישות אצלי</div></div>
+  <div class="stat"><div class="v"><span class="num">[סכום]</span> <small>₪ + מע"מ</small></div><div class="k">מחיר כולל, עם <span class="num">30</span> ימי הרצה</div></div>
+</div>
+
+<h2>מה קורה היום</h2>
+<ul>
+  <li>[כאב של הלקוח, במילים שלו]</li>
+</ul>
+
+<h2>מה המערכת עושה</h2>
+<div class="two">
+  <div class="card keep"><h3>[קבוצה ראשונה]</h3><ul><li>[יכולת]</li></ul></div>
+  <div class="card keep"><h3>[קבוצה שנייה]</h3><ul><li>[יכולת]</li></ul></div>
+</div>
+
+<h2>התוכנית, שלב אחרי שלב</h2>
+<p class="muted small">כל שלב נגמר במשהו שרואים עובד בסביבת הבדיקה. התאריכים מניחים שמתחילים ב-<span class="num">[DD.MM.YYYY]</span>.</p>
+<div class="stage">
+  <div class="badge">0</div>
+  <div class="body">
+    <div class="title">[שם השלב] <span class="when"><span class="num">[D.M]</span> עד <span class="num">[D.M]</span></span></div>
+    <ul>
+      <li>[מה נבנה בשלב, במילים של הלקוח]</li>
+    </ul>
+    <div class="accept"><b>גמור כש:</b> [תוצאה שרואים עובדת]</div>
+  </div>
+</div>
+<div class="stage">
+  <div class="badge">1</div>
+  <div class="body">
+    <div class="title">[שם השלב] <span class="when"><span class="num">[D.M]</span> עד <span class="num">[D.M]</span></span></div>
+    <ul>
+      <li>[מה נבנה בשלב, במילים של הלקוח]</li>
+    </ul>
+    <div class="accept"><b>גמור כש:</b> [תוצאה שרואים עובדת]</div>
+  </div>
+</div>
+
+<h2>לוח זמנים</h2>
+<!-- One g-row per stage. Each column is one week; bar right = start week index * 10%, width = weeks * 10% for 10 columns. -->
+<div class="gantt">
+  <div class="g-row g-head">
+    <div class="g-label"></div>
+    <div class="g-track"><span><span class="num">[D.M]</span></span><span><span class="num">[D.M]</span></span><span><span class="num">[D.M]</span></span><span><span class="num">[D.M]</span></span><span><span class="num">[D.M]</span></span><span><span class="num">[D.M]</span></span><span><span class="num">[D.M]</span></span><span><span class="num">[D.M]</span></span><span><span class="num">[D.M]</span></span><span><span class="num">[D.M]</span></span></div>
+  </div>
+  <div class="g-row"><div class="g-label"><span class="num">0</span> · [שם השלב]</div><div class="g-track"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><div class="g-bar" style="right:0%;width:10%"></div></div></div>
+</div>
+<p class="small muted">כל עמודה היא שבוע עבודה, לפי היום שהוא מתחיל בו.</p>
+<div class="callout small">התאריכים מניחים שעד <span class="num">[DD.MM.YYYY]</span> [הגישות הנדרשות] אצלי. אם מתחילים מאוחר יותר, כל התאריכים זזים באותו פער. זמן שמחכים בו לאישור של ספק חיצוני או לתשובה מכם מזיז את התאריכים, לא את המחיר.</div>
+
+<h2 class="page-break">עלות</h2>
+<div class="price keep">
+  <div>
+    <div class="k">המחיר לכל המערכת, כולל <span class="num">30</span> ימי הרצה</div>
+    <div class="v"><span class="num">[סכום]</span> ₪ <small>+ מע"מ</small></div>
+  </div>
+  <div class="vat">
+    <div>מע"מ <span class="num">18%</span>: <span class="num">[סכום]</span> ₪</div>
+    <div><b>סך הכל לתשלום: <span class="num">[סכום]</span> ₪</b></div>
+  </div>
+</div>
+
+<h3>תנאי תשלום</h3>
+<p>שני תשלומים שווים: חצי לפני שמתחילים, וחצי במסירה.</p>
+<table class="keep">
+  <thead><tr><th>מתי</th><th class="n">לפני מע"מ</th></tr></thead>
+  <tbody>
+    <tr><td>לפני תחילת העבודה, עם אישור ההצעה</td><td class="n"><span class="num">[חצי]</span> ₪</td></tr>
+    <tr><td>במסירה: [תוצאה נראית שמגדירה מסירה]</td><td class="n"><span class="num">[חצי]</span> ₪</td></tr>
+    <tr class="total"><td>סך הכל</td><td class="n"><span class="num">[סכום]</span> ₪</td></tr>
+  </tbody>
+</table>
+<p class="small">באשראי או בהעברה בנקאית. חשבונית וקבלה נשלחות עם כל תשלום.</p>
+
+<h2>עלויות שוטפות, ישירות לספקים</h2>
+<p>אלה לא כלולים במחיר. הכל נפתח על החשבונות של [הלקוח], ואני מנהל אותם כאדמין.</p>
+<ul><li><b>[ספק]:</b> [על מה משלמים, בלי מחיר שלא אומת]</li></ul>
+
+<h2>מה אני צריך מכם</h2>
+<div class="two keep">
+  <div class="card"><h3>לפני שמתחילים</h3><ul class="small"><li>[גישה או החלטה]</li></ul></div>
+  <div class="card"><h3>במהלך העבודה</h3><ul class="small"><li>[קלט]</li></ul></div>
+</div>
+
+<h2>מה כלול ומה לא</h2>
+<div class="two keep">
+  <div class="card accent"><h3>כלול</h3><ul class="small">
+    <li>כל מה שמפורט בשלבים.</li>
+    <li><span class="num">30</span> ימי הרצה אחרי המסירה: תיקוני באגים והתאמות קטנות, כלולים במחיר.</li>
+  </ul></div>
+  <div class="card"><h3>לא כלול</h3><ul class="small">
+    <li>העלויות השוטפות של הספקים.</li>
+    <li>תחזוקה ושיפורים אחרי ימי ההרצה. אפשר בריטיינר חודשי, בהצעה נפרדת.</li>
+  </ul></div>
+</div>
+
+<h3>הנחות שההצעה בנויה עליהן</h3>
+<ul class="small">
+  <li>[הנחה שמשפיעה על ההיקף]</li>
+  <li>שינוי בהיקף מתומחר ומאושר לפני שעובדים עליו.</li>
+</ul>
+
+<h2>בעלות ותנאים</h2>
+<ul class="small">
+  <li>[מי הבעלים של החשבונות, הנתונים והקוד]</li>
+  <li>המחירים בשקלים חדשים, ומע"מ לפי השיעור במועד החשבונית. ההצעה בתוקף עד <span class="num">[DD.MM.YYYY]</span>.</li>
+</ul>
+
+<div class="sign">
+  <div><div class="line">[השם שלך], חתימה ותאריך</div></div>
+  <div><div class="line">[הלקוח], שם, חתימה ותאריך</div></div>
+</div>
+
+<footer>
+  <span>[השם שלך] · [שם העסק, עוסק מורשה או ח"פ]</span>
+  <span class="num">[המייל שלך]</span>
+</footer>
+
+</body>
+</html>

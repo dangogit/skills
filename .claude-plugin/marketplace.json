@@ -1,0 +1,21 @@
+{
+  "name": "daniel-goldman",
+  "owner": {
+    "name": "Daniel Goldman",
+    "url": "https://danielthegoldman.com"
+  },
+  "metadata": {
+    "description": "Skills Daniel Goldman uses on client projects with Claude Code, shared with his students",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "daniel",
+      "source": "./plugins/daniel",
+      "description": "Client project skills: from a meeting and a spec to a scoped estimate and a branded Hebrew proposal PDF",
+      "version": "0.1.0",
+      "category": "productivity",
+      "tags": ["proposal", "quote", "hebrew", "clients", "freelance"]
+    }
+  ]
+}
