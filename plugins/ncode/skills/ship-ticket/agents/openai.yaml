@@ -1,0 +1,4 @@
+interface:
+  display_name: "ממשימה ל-PR"
+  short_description: "לוקח משימה מ-GitHub, בונה, בודק, עושה code review ופותח PR"
+  default_prompt: "השתמש ב־$ship-ticket כדי לקחת את המשימה הבאה מהלוח ולהביא אותה ל-PR פתוח ובדוק."
