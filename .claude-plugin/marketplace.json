@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "The Claude Code skills nCode (אין קוד) gives its students",
-    "version": "0.3.0"
+    "version": "0.3.1"
   },
   "plugins": [
     {
       "name": "ncode",
       "source": "./plugins/ncode",
       "description": "nCode's skills for client projects: from a meeting and a spec to a scoped estimate and a branded Hebrew proposal PDF, and from a GitHub ticket to a reviewed pull request",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "category": "productivity",
       "tags": ["ncode", "proposal", "quote", "hebrew", "clients", "freelance", "github", "workflow", "code-review"]
     }
