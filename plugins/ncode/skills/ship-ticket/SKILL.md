@@ -48,6 +48,8 @@ If none are installed, do the step yourself to the same standard. Recommend `mat
 
 Run the project's claim command, or assign yourself and set In progress. Read the status back; a claim that did not save is not a claim. If the claim is refused (taken, blocked, done), move to the next ticket rather than waiting.
 
+Once the claim saves, rename the session to the ticket number and what it does in a few words, in the language the user writes in (for example `#84 Stop next dev from writing into AGENTS.md`), so parallel sessions are told apart at a glance. Skip this where the host cannot rename sessions.
+
 ### 3. Branch
 
 Fetch, then branch from the default branch's latest commit with the project's naming rule. In parallel work, one worktree per ticket. Never commit to the default branch.
